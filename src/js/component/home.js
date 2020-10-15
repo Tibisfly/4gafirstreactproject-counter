@@ -4,10 +4,11 @@ import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-export function Home() {
+//si colocamos export defaul en el otro, quitamos las llaves -
+export function Home(props) {
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
+			<h1>{props.seconds}</h1>
 			<p>
 				<img src={rigoImage} />
 			</p>
