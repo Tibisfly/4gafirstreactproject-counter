@@ -15,19 +15,23 @@ import { Home } from "./component/home.js";
 let contador = 0;
 //1. Necesitamos que el contador vaya desde 0 a 3434
 //2. Lanzar una alerta cuando llegue 3434
-setInterval(function() {
+let counterInterval = setInterval(function() {
 	ReactDOM.render(
 		<Home seconds={contador} />,
 		document.querySelector("#app")
 	);
 	contador = contador + 1;
 	alertSeconds();
-}, 1 * 1000);
+}, 1000);
 
 function alertSeconds() {
 	if (contador == 3) {
 		alert("Game Over");
 	}
+}
+
+function stopCounter() {
+	clearInterval(counterInterval);
 }
 
 //render your react application

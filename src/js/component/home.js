@@ -6,9 +6,10 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 //si colocamos export defaul en el otro, quitamos las llaves -
 export function Home(props) {
+	let { seconds } = props;
 	return (
 		<div className="text-center mt-5">
-			<h1>{props.seconds}</h1>
+			<h1>{seconds}</h1>
 			<p>
 				<img src={rigoImage} />
 			</p>
@@ -20,6 +21,7 @@ export function Home(props) {
 				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
 				love!
 			</p>
+			<button onClick={props.stopCounter}>Stop counter</button>
 		</div>
 	);
 }
